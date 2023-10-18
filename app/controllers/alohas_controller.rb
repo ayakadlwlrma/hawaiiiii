@@ -4,32 +4,7 @@ class AlohasController < ApplicationController
             @aloha = Aloha.new
           end
         
-          def create
-            aloha = Aloha.new(aloha_params)
-            aloha.user_id = current_user.id
-    
-            if aloha.save
-              p params[:aloha][:images]
-              params[:aloha][:images]&.each do |image|
-                  p image
-                  Image.create!(image: image, aloha_id: aloha.id)
-              end
-    
-              if aloha.category == 'グルメ'
-                redirect_url = '/alohas/food'
-              elsif aloha.category == 'スポット'
-                redirect_url = '/alohas/spot'
-              elsif aloha.category =='お土産'
-                redirect_url = '/alohas/omiyage'
-              else
-                redirect_url = '/alohas/leisure'
-              end
-    
-            else
-              redirect_url = '/alohas/new'
-    
-            end
-     end
+
             
     
           def show
