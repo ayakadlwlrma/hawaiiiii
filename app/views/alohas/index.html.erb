@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ja">
+ <head>
+   <meta charset="UTF-8">
+   <title>HAWAIIの歩き方</title>
+   <link rel="stylesheet" type="text/css" href="index.css">
+   <link rel="preconnect" href="https://fonts.googleapis.com" />
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+   <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Mochiy+Pop+P+One&family=Reenie+Beanie&display=swap"
+   rel="stylesheet"/>
+   <link href="https://fonts.googleapis.com/css?family=AbeeZee" rel="stylesheet">
+ </head>
+
+ <body>
+   <div class="first-block">
+     
+     <h1 class="title">HAWAII</h1>
+    
+   </div>
+
+   <div class="概要">
+    <div class="文">
+     <p>HAWAIIの歩き方は、<br>
+      ハワイ旅行を計画しているすべてのトラベラーに向けた<br>
+      観光情報サイトです。</p>
+     <p>このサイトを閲覧する多くの人が<br>
+      貴重なハワイ旅行を後悔せずに済むことを<br>
+      目指しています。</p>
+     <p>ぜひ、卒業旅行やハネムーン等でハワイに行く際には<br>
+      参考にしてみてください。</p>
+    </div>
+   </div>
+
+
+
+ <div class="second-block">
+  <h1 class="title">ハワイ旅行POINT</h1>
+   <div class="ポイント">
+    <div class="文">
+     <p>★料理は必ずシェアorハーフサイズにする!</p>
+     <p>★レストランに行くときは上着を持っていく!</p>
+     <p>★チップ文化を知っておこう！</p>
+     <p>★JCBカードを持っていたら持っていこう!<br>
+        →トロリーバスが無料に！！</p>
+     <p>★お冷やパンでも料金を取られることあり!</p>
+     <p>★アルコールを買うときはパスポートが必要!</p>
+     <p>★お店の入れ替わりが激しいから最新の情報を得よう!</p>
+    </div>
+   </div>
+ </div>
+
+<div class="third-block">
+ <h1 class="ランキング">ランキング</h1>
+ <div class="リンク">
+  <div class="グルメ">
+<%= link_to alohas_food_path do %>
+ <%= image_tag 'グルメ①.jpg', width: '250px', height: '250px' %>
+<% end %>
+  </div>
+
+  <div class="スポット">
+<%= link_to alohas_spot_path do %>
+ <%= image_tag 'スポット①.jpg', width: '250px', height: '250px' %>
+<% end %>
+  </div>
+
+
+  <div class="レジャー">
+<%= link_to alohas_leisure_path do %>
+ <%= image_tag 'レジャー①.jpg', width: '250px', height: '250px' %>
+<% end %>
+  </div>
+
+  <div class="お土産">
+<%= link_to alohas_omiyage_path do %>
+ <%= image_tag 'お土産①.jpg', width: '250px', height: '250px' %>
+<% end %>
+  </div>
+ </div>
+</div>
+
+<div class="fourth-block">
+ <div class="地図">
+ </div>
+</div>
+
+
+ </body>
+</html>
+ 
+

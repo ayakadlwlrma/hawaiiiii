@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+ <head>
+   <meta charset="UTF-8">
+   <title>お土産ランキング</title>
+   <link rel="stylesheet" type="text/css" href="food.css">
+   <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One" rel="stylesheet">
+   </head>
+
+<div class="first-block-omiyage">
+ <div class="title">
+  <h1>お土産ランキング</h1>
+ </div>
+</div>
+
+
+<div class="second-block-food">
+<% counter = 0 %>
+<% @ranked_posts.each do |aloha| %>
+<div class="フードランキング">   
+  <div class="写真">
+    <div class='順位'>   
+      <% counter += 1 %>
+      <!-- ここで counter 変数を使用して処理を行います -->
+      <p><%= counter %></p>
+    </div>
+    <%= image_tag aloha.photo_url, size: "400x300" if aloha.photo? %>
+
+  </div>
+
+   <div class="内容">
+    <div class="名前">
+    <%= link_to aloha_path(aloha.id) do %>
+      <li><%= aloha.name %></li>
+    <% end %>
+    </div>
+
+    <div class="星数字">
+    <span class="star-rating">
+     <span class="star-rating-front" style="width: <%= getPercent(aloha.average_star) %>%;">★★★★★</span>
+     <span class="star-rating-back">★★★★★</span>
+     </span> 
+     <%= aloha.average_star %>
+    </div>
+
+    <div class="ポイント">
+     <%= aloha.about %>
+    </div>
+
+    <div class="星数字2">
+    <% if user_signed_in? %> 
+       <% if current_user.admin? %>
+       <li>
+        <%= link_to "編集する", edit_aloha_path(aloha.id) %>
+        <%= button_to "削除する", aloha_path(aloha.id), method: :delete %>
+       </li>
+        <% end %> 
+       <% end %> 
+      </div>
+     </div>
+      
+     </div>
+     <% end %>
+   </div>

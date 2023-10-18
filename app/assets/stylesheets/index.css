@@ -1,0 +1,120 @@
+/*   First block   */
+.first-block{
+    background-image: url("../../../assets/ハワイ②.jpg");
+    background-size: cover;
+    width: 100%;
+    height: 770px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   }
+
+.first-block .title{
+    width: 500px;
+    color: white;
+    font-size: 100px;
+    margin-left: 50%;
+    font-family: bowlby one;
+}
+
+.概要{
+    width: 100%;
+    height: 850px;
+    background-image: url("../../../assets/背景.png");
+    position: relative;  
+}
+
+.概要 .文{
+    font-size: 30px;
+    text-align: center;
+    padding-top: 80px;
+    font-family: 'AbeeZee';
+}
+
+.概要 .文 p{
+    margin-bottom: 30px;
+}
+/*   First block End   */
+
+
+/*   Second block   */
+.second-block{
+    background-image: url("../../../assets/背景2.png");
+    width: 100%;
+    height: 980px;
+}
+
+.second-block .title{
+    text-align: center;
+    padding-top: 80px;
+    font-size: 50px;
+}
+
+.second-block .ポイント{
+    width: 100%;
+}
+.second-block .ポイント .文{
+    font-size: 30px;
+    margin-top: 70px;
+    margin-left: 450px;
+}
+
+.second-block .ポイント .文 p{
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+/*   Second block End   */
+
+/*   Third block   */
+.third-block{
+    background-image: url("../../../assets/背景.png");
+    width: 100%;
+    height: 850px;
+}
+.third-block .ランキング{
+    text-align: center;
+    padding-top: 80px;
+    font-size: 50px;
+   
+}
+
+.リンク{
+    padding-top: 50px;
+    display: flex;
+    justify-content: center;
+
+}
+
+.グルメ{
+   padding: 40px;
+}
+
+.スポット{
+    padding: 40px;
+}
+
+
+.レジャー{
+    padding: 40px;
+}
+
+.お土産{
+    padding: 40px;
+}
+
+
+/*   Third block End   */
+
+/*   fourth block   */
+.fourth-block{
+    background-image: url("../../../assets/地図.png");
+    background-size: cover;
+    width: 100%;
+    height: 1100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+

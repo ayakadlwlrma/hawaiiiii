@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css?family=Alfa+Slab+One');
+
+.ログインタイトル{
+    text-align: center;
+    font-size: 120px;
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 100%;
+}
+
+
+.ログイン{
+    background-image: url("../../../assets/ログインページ.jpg");
+    width: 100%;
+    height: 300px;
+    padding-top: 140px;
+    background-size: cover;
+}
+
+.フィールド{
+    font-size: 25px;
+    margin-bottom: 0px;
+}
+
+.ログイン2{
+    text-align: center;
+    padding-top: 15px;
+}
+
+.link{
+    padding-top: 20px;
+}

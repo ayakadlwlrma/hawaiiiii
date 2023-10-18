@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ja">
+ <head>
+   <meta charset="UTF-8">
+   <title>詳細</title>
+   <link rel="stylesheet" type="text/css" href="show.css">
+   <link href="https://fonts.googleapis.com/css?family=Bowlby+One" rel="stylesheet">
+ </head>
+
+
+ <div class="first-block-show">
+
+  <div class="name">
+   <div class="title">
+    <h1><p><%= @aloha.name %></p></h1>
+   </div>
+  </div>
+
+  <div class="photo">
+    <% @aloha.images.each do |image| %>
+      <%= image_tag image.image_url, size: "350x300" %>
+    <% end %>
+  </div>
+ </div>
+
+ <div class="second-block-show">
+  <div class="内容">
+   <div class="タイトル箱">
+   <div class="タイトル">
+    information
+   </div>
+   </div>
+   <div class="文">
+    <ul>
+    <li>おすすめ度
+      <div class="おすすめ度">
+        <%= @rank %>
+      </div>
+    </li>
+
+    <li>営業時間
+      <div class="営業時間">
+        <%= @aloha.time %>
+      </div>
+    </li>
+
+    <li>おすすめポイント
+      <div class="おすすめポイント">
+        <%= @aloha.about %>
+      </div>
+    </li>
+
+    <li>予算
+      <div class="予算">
+        <%= @aloha.price %>
+      </div>
+    </li>
+
+    <li>公式ホームページ
+      <div class="ホームページ">
+        <%= @aloha.link %>
+      </div>
+    </li>
+
+    <li>駐車場
+      <div class="駐車場">
+        <%= @aloha.parking %>
+      </div>
+    </li>
+
+    <li>注意点
+      <div class="注意点">
+        <%= @aloha.point %>
+      </div>
+    </li>
+
+    <li>住所
+      <div class="住所">
+        <%= @aloha.address %>
+      </div>
+    </li>
+
+    <li>電話番号
+      <div class="電話番号">
+        <%= @aloha.phonenumber %>
+      </div>
+    </li>
+
+    </ul>
+   </div>
+
+
+   <div class="グーグルマップ">
+    <div class="所在地">
+      所在地
+    </div>
+      <div id='map'></div>
+
+<style>
+#map {
+  height: 500px;
+  width: 60%;
+}
+</style>
+  </div>
+
+<!-- js部分 -->
+<script>
+//初期マップの設定
+let map
+let marker
+function initMap(){
+  geocoder = new google.maps.Geocoder()
+
+  map = new google.maps.Map(document.getElementById('map'), {
+    center:  {lat: <%= @aloha.lat %>, lng: <%= @aloha.lng %>},
+    zoom: 15,
+  });
+
+   marker = new google.maps.Marker({
+    position:  {lat: <%= @aloha.lat %>, lng: <%= @aloha.lng %>},
+    map: map
+  });
+}
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCnAUAjQ8vPm_rM1aR5Q81Ah6G2ivYL5oI&callback=initMap" async defer></script>
+   </div>
+ </div>
+
+<div class="comment-wrapper">
+<h3>comment</h3>
+<div class="comment-box">
+  <% @comments.each do |c| %>
+    <div class="コメント">
+      <div class="main-box">
+        <div class="left-container"><%= c.content %></div>
+        <div class="right-container">
+         <span class="star-rating">
+          <span class="star-rating-front" style="width: <%= getPercent(c.star.to_i) %>%;">★★★★★</span>
+          <span class="star-rating-back">★★★★★</span>
+         </span> 
+        </div>
+      </div>
+      <% end %>
+    </div>
+</div>
+</div>
+</div>
+
+
+
+<div class="comment-create">
+  <div class="comment-create-box">
+   <div class="post">
+    comment post
+   </div>
+   <div class="love">
+    <h5 class="コメント入力">コメント入力</h5>
+    <div class="テキストエリア">
+     <%= form_with(model: [@aloha, @comment], local: true) do |f| %>
+     <%= f.text_area :content %>
+    </div>
+
+    <h5>総合評価</h5>
+    <div class="post_form">
+    <%= f.radio_button :star, 5 ,id: 'star1'%>
+    <label for="star1"><span class="text">最高</span>★</label>
+
+    <%= f.radio_button :star, 4 ,id: 'star2'%>
+    <label for="star2"><span class="text">良い</span>★</label>
+
+    <%= f.radio_button :star, 3 ,id: 'star3'%>
+    <label for="star3"><span class="text">普通</span>★</label>
+
+    <%= f.radio_button :star, 2 ,id: 'star4'%>
+    <label for="star4"><span class="text">悪い</span>★</label>
+
+    <%= f.radio_button :star, 1 ,id: 'star5'%>
+    <label for="star5"><span class="text">最悪</span>★</label>
+    </div>
+    <div class="コメントする">
+      <%= button_tag type: "submit" do %>
+        <i class="far fa-comments"></i> コメントする
+      <% end %>
+    <% end %>
+    </div>
+   </div>
+  </div>
+</div>
+
+
+</div>
+
+
+<div class="リンクリンク">
+<%= link_to "HOMEに戻る", alohas_path %>
+
+<% if user_signed_in? %> 
+<% if current_user.admin? %>
+  <%= link_to "編集する", edit_aloha_path(@aloha.id) %>
+<% end %> 
+<% end %> 
+
+
+<% if @aloha.category == "グルメ" %>
+  <%= link_to "ランキングに戻る", alohas_food_path %>
+<% elsif @aloha.category == "スポット" %>
+  <%= link_to "ランキングに戻る", alohas_spot_path %>
+<% elsif @aloha.category == "レジャー" %>
+  <%= link_to "ランキングに戻る", alohas_leisure_path %>
+<% elsif @aloha.category == "お土産" %>
+  <%= link_to "ランキングに戻る", alohas_omiyage_path %>
+<% end %>
+</div>
+

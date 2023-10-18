@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css?family=Bowlby+One');
+
+
+
+
+/*   First block   */
+.first-block-show{
+    width: 100%;
+    padding-top: 70px;
+}
+
+.first-block-show .name{
+    background-image: url("../../../assets/背景タグ.png");
+    margin-top: 50px; 
+    width: 1400px;
+    margin: 0 auto;
+    height: 150px;
+    padding-top: 30px;
+}
+
+.first-block-show .name .title{
+    font-size: 40px;
+    text-align: center;
+    font-family: 'Bowlby One';
+    width: 100%;
+    text-shadow:
+		1px -1px 1px #BDBDBD,
+		-1px 2px 1px #737272,
+		-2px 4px 1px #767474,
+		-3px 6px 1px #787777,
+		-4px 8px 1px #424242,
+		-5px 10px 1px #616161,
+		-6px 12px 1px #757575,
+		-7px 14px 1px #9E9E9E,
+		-8px 16px 1px #BDBDBD,
+		-9px 18px 1px #E0E0E0;
+
+}
+
+.first-block-show .photo{
+    margin-top: 100px;
+    margin-left: 43px;
+}
+
+
+.second-block-show .内容{
+    background-color: #D9D9D9;
+    margin-left: 0px;
+    padding-bottom: 40px;
+}
+
+.タイトル箱{
+    border-bottom: solid;
+    width: 90%;
+    margin-left: 70px;
+}
+
+.タイトル{
+    font-size: 40px;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    font-family: 'Bowlby One';
+}
+
+.second-block-show .内容 .文{
+    font-size: 20px;
+    margin-left: 80px;
+    padding-top: 40px;
+}
+
+.second-block-show .内容 li{
+    margin-bottom: 30px;
+    display: flex;
+    font-weight: bold;
+}
+
+.second-block-show .内容 .おすすめ度{
+    padding-left: 5em;
+}
+
+.second-block-show .内容 .営業時間{
+    padding-left: 6em;
+}
+
+.second-block-show .内容 .おすすめポイント{
+    padding-left: 2em;
+}
+
+.second-block-show .内容 .予算{
+    padding-left: 8em;
+}
+
+.second-block-show .内容 .ホームページ{
+    padding-left: 2em;
+}
+
+.second-block-show .内容 .駐車場{
+    padding-left: 7em;
+}
+
+.second-block-show .内容 .注意点{
+    padding-left: 7em;
+}
+
+.second-block-show .内容 .住所{
+    padding-left: 8em;
+}
+
+.second-block-show .内容 .電話番号{
+    padding-left: 6em;
+}
+
+.グーグルマップ{
+    width: 100%;
+    display: flex;
+}
+
+.所在地{
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 80px;
+}
+
+#map{
+    margin-left: 9em;
+}
+
+.comment-wrapper{
+    width: 100%;
+    margin: 10px auto;
+}
+
+.comment-box{
+    width: 50%;
+    margin: 10px auto;
+    padding-top: 80px;
+    margin-bottom: 80px;
+}
+
+h3 {
+    font-size: 40px;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-family: 'Bowlby One';
+    border-bottom: solid;
+    margin-left: 70px;
+    width: 90%
+}
+
+
+.コメント {
+    border-top: solid 2px #D9D9D9;
+    margin-top: 10px;
+    padding-top: 20px;
+}
+
+.main-box {
+    margin: 5px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.comment-create{
+    width: 100%;
+}
+
+.comment-create-box{
+    padding-left: 600px;
+    padding-top: 40px;
+    margin: 8em auto; 
+    padding: 1.5em;
+    width: 400px; /*幅の調節*/
+    color: #777777; /* 文字色 */
+    font-family: 'Bowlby One';
+    background-color: #fff; /* 背景色 */
+    border: 4px solid #f6bfbc; /*線の太さ・色*/
+    border-radius: 3em .8em 3em .7em/.9em 2em .8em 3em;
+}
+
+.post{
+    text-align: center;
+    font-size: 40px;
+    padding-bottom: 30px;
+}
+
+.post_form{
+    padding-left: 80px;
+}
+.love{
+    text-align: center;
+}
+
+.コメントする{
+    padding-top: 50px;
+
+}
+
+.リンクリンク{
+    text-align: right;
+    font-size: 25px;
+    background-color: #D9D9D9;
+    width: 100%;
+}

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+
+ <head>
+   <meta charset="UTF-8">
+   <title>HAWAIIの歩き方</title>
+   <link rel="stylesheet" type="text/css" href="new.css">
+   <link rel="preconnect" href="https://fonts.googleapis.com" />
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+   <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Mochiy+Pop+P+One&family=Reenie+Beanie&display=swap"
+   rel="stylesheet"/>
+   <link href="https://fonts.googleapis.com/css?family=AbeeZee" rel="stylesheet">
+ </head>
+
+
+
+ <body>
+ <div class="first-block-new">
+  <div class="新規投稿">EDIT PAGE</div>
+   <%= form_for @aloha do |f| %>
+ </div>
+
+ <div class="second-block-new">
+  <div class="syousaihako">
+  <div class="syousai">
+   詳細情報
+  </div>
+  </div>
+  <div class="mapphako">
+  <div class="mapp">
+   所在地
+  </div>
+  </div>
+ </div>
+
+ <div class="toukoutoukou">
+  <div class="投稿内容">
+   <div class="field">
+    <%= f.label :name %>
+    <%= f.text_area :name, :size => '30×2' %>
+   </div>
+
+   <div class="field">
+    <%= f.label :time %>
+    <%= f.text_area :time, :size => '30×2' %>
+   </div>
+
+   <div class="field">
+    <%= f.label :category %>
+    <%= f.select :category, 
+    [["グルメ", "グルメ"], 
+    ["スポット", "スポット"], 
+    ["お土産", "お土産"],
+    ["レジャー", "レジャー"]], include_blank: "選択して下さい" %>
+   </div>
+
+   <div class="field">
+    <%= f.label :about  %>
+    <%= f.text_area :about, :size => "30x2" %>
+   </div>
+  
+   <div class="field">
+    <%= f.label :price %>
+    <%= f.text_area :price, :size => '30×2' %>
+   </div>
+
+   <div class="field">
+    <%= f.label :link  %>
+    <%= f.text_area :link, :size => "30x2" %>
+   </div>
+
+   <div class="field">
+    <%= f.label :parking  %>
+    <%= f.text_area :parking, :size => "30x2" %>
+   </div>
+
+   <div class="field">
+    <%= f.label :point  %>
+    <%= f.text_area :point, :size => "30x2" %>
+   </div>
+
+   <div class="field">
+    <%= f.label :address %>
+    <%= f.text_area :address, :size => "30x2" %>
+   </div>
+
+   <div class="field">
+    <%= f.label :phonenumber %>
+    <%= f.text_area :phonenumber, :size => "30x2" %>
+   </div>
+
+   <div class="field">
+    <%= f.label :photo %>
+    <%= f.file_field :photo %>
+   </div>
+
+   <div class="field">
+    <%= f.label :images %> 
+    <%= f.file_field :images, multiple: true %>
+   </div>
+  </div>
+   
+  
+
+ <div class="マップ">
+  <div class="マップ検索">
+   <input id="address" type="textbox" value="GeekSalon">
+   <input type="button" value="検索" onclick="codeAddress()">
+   <p>マーカーをドラック＆ドロップで位置の調整ができます。<p>
+  </div>
+  <div class="mappsyasin">
+   <div id='map'></div>
+    <div class="actions">
+     <%= f.label :lat,"緯度" %>
+     <%= f.text_field :lat,:value =>"緯度", id: :lat %>
+     <%= f.label :lng,"経度" %>
+     <%= f.text_field :lng,:value =>"経度", id: :lng %>
+    </div>
+  </div>
+
+  <div class="投稿">
+  <%= f.submit "投稿する" %>
+  </div>
+
+
+<% end %>
+
+
+<style>
+#map {
+  height: 600px;
+  width: 600px;
+}
+</style>
+
+<script>
+//初期マップの設定
+let map
+let marker
+function initMap(){
+  geocoder = new google.maps.Geocoder()
+
+  map = new google.maps.Map(document.getElementById('map'), {
+    center:  {lat: 35.6803997, lng:139.7690174},  //東京
+    zoom: 15,
+    
+  });
+}
+
+//検索後のマップ作成
+let geocoder
+let aft
+function codeAddress(){
+  let inputAddress = document.getElementById('address').value;
+  geocoder.geocode( { 'address': inputAddress}, function(results, status) {
+    if (status == 'OK') {
+        //マーカーが複数できないようにする
+        if (aft == true){
+            marker.setMap(null);
+        }
+
+        //新しくマーカーを作成する
+        map.setCenter(results[0].geometry.location);
+            marker = new google.maps.Marker({
+            map: map,
+            position: results[0].geometry.location,
+            draggable: true	// ドラッグ可能にする
+        });
+
+        //二度目以降か判断
+        aft = true
+
+        //検索した時に緯度経度を入力する
+        document.getElementById('lat').value = results[0].geometry.location.lat();
+        document.getElementById('lng').value = results[0].geometry.location.lng();
+
+        // マーカーのドロップ（ドラッグ終了）時のイベント
+        google.maps.event.addListener( marker, 'dragend', function(ev){
+            // イベントの引数evの、プロパティ.latLngが緯度経度
+            document.getElementById('lat').value = ev.latLng.lat();
+            document.getElementById('lng').value = ev.latLng.lng();
+        });
+    } else {
+      alert('該当する結果がありませんでした：' + status);
+    }
+  });   
+}
+
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCnAUAjQ8vPm_rM1aR5Q81Ah6G2ivYL5oI&callback=initMap" async defer></script>
+  </div>
+ </div>
+
+
+  >
+ 
+ </div>
+
+ </body>
+</html>
