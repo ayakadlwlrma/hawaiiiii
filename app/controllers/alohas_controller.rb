@@ -29,7 +29,6 @@ class AlohasController < ApplicationController
               redirect_url = '/alohas/new'
     
             end
-            redirect_to redirect_url
      end
             
     

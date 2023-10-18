@@ -1,6 +1,6 @@
 /*   First block   */
 .first-block{
-    background-image: url("../../../assets/hawaii2.jpg");
+    background-image: url("hawaii2.jpg");
     background-size: cover;
     width: 100%;
     height: 770px;
@@ -20,7 +20,7 @@
 .概要{
     width: 100%;
     height: 850px;
-    background-image: url("../../../assets/background.png");
+    background-image: url("background.png");
     position: relative;  
 }
 
@@ -39,7 +39,7 @@
 
 /*   Second block   */
 .second-block{
-    background-image: url("../../../assets/background2.png");
+    background-image: url("background2.png");
     width: 100%;
     height: 980px;
 }
@@ -68,7 +68,7 @@
 
 /*   Third block   */
 .third-block{
-    background-image: url("../../../assets/background.png");
+    background-image: url("background.png");
     width: 100%;
     height: 850px;
 }
@@ -108,7 +108,7 @@
 
 /*   fourth block   */
 .fourth-block{
-    background-image: url("../../../assets/地図.png");
+    background-image: url("map.png");
     background-size: cover;
     width: 100%;
     height: 1100px;
