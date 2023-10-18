@@ -2,14 +2,14 @@
 
 /*   First block   */
 .first-block-new{
-    background-image: url("../../../assets/新規投稿ページ.jpg");
+    background-image: url("../../../assets/newpage.jpg");
     background-size: cover;
     width: 100%;
     height: 300px;
     padding-top: 140px;
 }
 
-.first-block-new .新規投稿{
+.first-block-new .newpost{
     text-align: center;
     font-size: 100px;
     color: rgb(255, 255, 255);
@@ -35,13 +35,13 @@
     padding: 20px;
 }
 
-.投稿内容{
+.postcontent{
     padding-top: 40px;
     padding-left: 100px;
     padding-bottom: 20px;
 }
 
-.投稿{
+.post2{
     padding-left: 650px;
 }
 
@@ -82,11 +82,11 @@
     display: flex;
 }
 
-.マップ{
+.map2{
     padding-top: 70px;
 }
 
-.マップ検索{
+.mapsearch{
     padding-left: 290px;
 }
 

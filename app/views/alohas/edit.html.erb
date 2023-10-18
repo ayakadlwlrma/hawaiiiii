@@ -17,7 +17,7 @@
 
  <body>
  <div class="first-block-new">
-  <div class="新規投稿">EDIT PAGE</div>
+  <div class="newpost">EDIT PAGE</div>
    <%= form_for @aloha do |f| %>
  </div>
 
@@ -35,7 +35,7 @@
  </div>
 
  <div class="toukoutoukou">
-  <div class="投稿内容">
+  <div class="postcontent">
    <div class="field">
     <%= f.label :name %>
     <%= f.text_area :name, :size => '30×2' %>
@@ -103,8 +103,8 @@
    
   
 
- <div class="マップ">
-  <div class="マップ検索">
+ <div class="map2">
+  <div class="mapsearch">
    <input id="address" type="textbox" value="GeekSalon">
    <input type="button" value="検索" onclick="codeAddress()">
    <p>マーカーをドラック＆ドロップで位置の調整ができます。<p>
@@ -119,7 +119,7 @@
     </div>
   </div>
 
-  <div class="投稿">
+  <div class="post2">
   <%= f.submit "投稿する" %>
   </div>
 

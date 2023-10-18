@@ -11,7 +11,7 @@
 
 
 .first-block-spot{
-    background-image: url("../../../assets/スポットランキング.jpg");
+    background-image: url("../../../assets/spotrank.jpg");
     width: 100%;
     height: 300px;
     padding-top: 140px;
@@ -23,7 +23,7 @@
     margin-top: 50px;
 }
 
-.スポットランキング{
+.spotrank{
     display: flex;
     width: 1300px;
     padding-left: 40px;

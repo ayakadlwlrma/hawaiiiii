@@ -10,7 +10,7 @@
 }
 
 .first-block-show .name{
-    background-image: url("../../../assets/背景タグ.png");
+    background-image: url("../../../assets/backgroundtag.png");
     margin-top: 50px; 
     width: 1400px;
     margin: 0 auto;
@@ -111,7 +111,7 @@
     padding-left: 6em;
 }
 
-.グーグルマップ{
+.googlemap{
     width: 100%;
     display: flex;
 }
