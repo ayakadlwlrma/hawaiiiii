@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css?family=Alfa+Slab+One');
+
+.sign-up-title{
+    text-align: center;
+    font-size: 120px;
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 100%;
+}
+
+
+.sign-up{
+    background-image: url("../../../assets/signup.jpg");
+    width: 100%;
+    height: 300px;
+    padding-top: 140px;
+    background-size: cover;
+}
+
+.signup2{
+    text-align: center;
+    padding-top: 20px;
+}
